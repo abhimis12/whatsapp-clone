@@ -1,0 +1,81 @@
+.Chat{
+    flex:0.75;
+    flex-direction: column;
+}
+.Chat .Chat_header{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgreen;
+    padding: 10px;
+}
+.Chat_headerInfo{
+   
+    margin-left: 15px;;
+}
+.Chat_headerInfo h3{
+    font-size: 16px;
+}
+.Chat_headerInfo p{
+    font-size: 12px;
+}
+.header_right{
+    display: flex;
+    align-items: center;
+}
+.header_right svg{
+    font-size: 18px;
+}
+.Chatbody{
+   
+    padding: 29px 10px;
+    overflow-y: auto;
+    height: 76vh;
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+}
+.Chatbody .Chatmsg{
+    position: relative;
+    background-color: #fff;;
+    width: fit-content;;
+    padding: 5px;;
+    border-radius: 5px;
+    font-size: 14px ;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+.Chatname{
+    position: absolute;
+    top: -19px;
+    left: 5px;
+    font-size: 15px;
+    font-weight: bold;
+   
+
+}
+.Chattime{
+    font-size: 10px;
+    margin-left: 10px;
+}
+.chatreciver{
+    background-color: #d6f8d6 !important;
+    margin-left: auto;
+}
+.Chatfooter{
+    display:flex;
+    align-items: center;
+    padding: 10px;;
+}
+.Chatfooter svg{
+   padding: 10px;
+   color:gray;
+}
+.Chatfooter form {
+    flex: 1;
+}
+.Chatfooter form input[type="text"]{
+    border: 0;
+    width: 100%;
+    height: 5vh;
+}
+.Chatfooter form input[type="submit"]{
+    display: none;
+}
