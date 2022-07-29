@@ -13,8 +13,8 @@ body{
  place-items: center;
 }
 .app_body {
-  height: 97vh;
-  width: 170vh;
+  height: 77vh;
+  width: 60vw;
   background-color: #ededed;
   display :flex;
   box-shadow: -1px 4px 20px -6px #000;

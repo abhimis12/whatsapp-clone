@@ -6,15 +6,44 @@ import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import AttachmentIcon from '@mui/icons-material/Attachment';
 import MicIcon from '@mui/icons-material/Mic';
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../css/Chat.css";
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import db from '../firebase';
 export const Chat = () => {
+    const {roomId}= useParams();
+    const[roomName,setRoomName]=useState("")
+    const[input, setInput]=useState("")
+    useEffect(()=>{
+           db.collection("rooms").doc(roomId).onSnapshot(snapshot=>{
+            setRoomName(snapshot.data().name);
+           })
+    },[roomId])
+    console.log(roomId)
+
+
+    // const sendMessage=(e)=>{
+    //     e.preventDefault();
+    //     if(input ===""){
+    //       return alert("Please inter msg")
+    //     }
+    //     db.collection("rooms").doc(roomId).collection("message").add({
+    //         name:"abhishek",
+    //         message:input,
+    //         timestamp:firebase.firestore.FeildValue.serverTimestamp()
+    //     });
+    //     setInput("")
+    // }
+
+
   return (
     <div   className='Chat'>
         <div  className='Chat_header'>
           <Avatar/>
+          
               <div  className='Chat_headerInfo'>
-                  <h3>Room name</h3>
+                  <h3>{roomName}</h3>
                   <p>Last seen</p>
                </div>
 
@@ -59,8 +88,11 @@ export const Chat = () => {
         <div className='Chatfooter'>
             <EmojiEmotionsIcon/>
             <AttachmentIcon/>
-           <form>
-           <input type="text" placeholder='Type the text'/>
+            {/* onSubmit = {sendMessage} */}
+           <form >
+           <input type="text" value={input} placeholder='Type the text'/>
+        {/* //    onChange={e=> setInput(e.target.value) */}
+    
             <input type="submit"/>
            </form>
             <MicIcon/>

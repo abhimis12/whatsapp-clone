@@ -29,7 +29,7 @@
    
     padding: 29px 10px;
     overflow-y: auto;
-    height: 76vh;
+    height:70%;
     background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
 }
 .Chatbody .Chatmsg{
@@ -60,6 +60,7 @@
     margin-left: auto;
 }
 .Chatfooter{
+    
     display:flex;
     align-items: center;
     padding: 10px;;
